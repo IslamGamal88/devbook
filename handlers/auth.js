@@ -27,3 +27,18 @@ exports.signup = async (req, res) => {
     return res.status(400).json({ errors: [{ msg: "Sorry , that Username and/or Email is already taken" }] });
   }
 };
+
+exports.login = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+  try {
+    const user = await User.findOne(req.body.email);
+    const { name, email, avatar, id } = user;
+    const token = jwt.sign({ name, id, email, avatar }, secretKey);
+    return res.status(200).json({ name, email, avatar, id, token });
+  } catch (error) {
+    return res.status(500).json({ errors: [{ msg: "Server error" }] });
+  }
+};

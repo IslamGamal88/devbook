@@ -1,2 +1,6 @@
 GET http://localhost:8000/api/auth
 Content-Type: application/json
+
+{
+    "x-auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiaXNsYW1tbW1tbSIsImF2YXRhciI6Ii8vd3d3LmdyYXZhdGFyLmNvbS9hdmF0YXIvNzVkNTdmOWUyZjdlMTk1Y2Y5NDNjNTgyYzM3MzczY2Q_cz0yMDAmcj1wZyZkPW1tIiwiZW1haWwiOiJpc2xhbUBjb2Rlcm1tbXNlYS5jb20iLCJpZCI6IjVkMDdiM2ZlZTJmN2QyMTFlNDk5NTRmYSIsImlhdCI6MTU2MDc4NTkxOX0.HeBHOo7yaqYyO3Gex2JO64QkcCmPU3NM2U0_1HGsfnc"
+}
