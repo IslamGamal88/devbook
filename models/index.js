@@ -4,6 +4,7 @@ const db = config.get("mongoURI");
 
 // import schemas
 const User = require("./User");
+const Profile = require("./Profile");
 // const
 
 const connectDB = async () => {
@@ -21,3 +22,4 @@ const connectDB = async () => {
 connectDB();
 
 module.exports.User = User;
+module.exports.Profile = Profile;
