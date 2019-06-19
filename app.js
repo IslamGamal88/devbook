@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // api
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
-app.use("/api/profile", profileRoutes);
+app.use("/api/profiles", profileRoutes);
 app.use("/api/posts", postsRoutes);
 
 app.get("/", (req, res) => {

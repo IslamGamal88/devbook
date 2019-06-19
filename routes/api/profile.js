@@ -1,17 +1,18 @@
 const express = require("express");
 const router = express.Router();
-const { loginRequired } = require("../../middleware/auth");
-const { getCurrentUserProfile, createOrUpdateProfile } = require("../../handlers/profile");
+const { loginRequired, ensureCorrectUser } = require("../../middleware/auth");
+const { getCurrentUserProfile, createOrUpdateProfile, getAllProfiles, getUserProfile } = require("../../handlers/profile");
 const { check } = require("express-validator/check");
 
 // @ route   GET /api/profile/me
 // @ desc    get current user profile
-// @ access  public
+// @ access  private
 router.get("/me", loginRequired, getCurrentUserProfile);
+// =====================================================
 
 // @ route   POST /api/profile/
 // @ desc    create or update a user profile
-// @ access  public
+// @ access  private
 const validateProfile = [
   check("status", "Status is required")
     .not()
@@ -22,5 +23,17 @@ const validateProfile = [
 ];
 
 router.post("/", validateProfile, loginRequired, createOrUpdateProfile);
+// =====================================================
+
+// @ route   GET /api/profile/user/:user_id
+// @ desc    get all profiles
+// @ access  public
+router.get("/", getAllProfiles);
+// =====================================================
+
+// @ route   GET /api/profile/user/:user_id
+// @ desc    get all profiles
+// @ access  private
+router.get("/user/:user_id", loginRequired, getUserProfile);
 
 module.exports = router;

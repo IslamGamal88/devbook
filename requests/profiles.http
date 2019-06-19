@@ -1,11 +1,12 @@
 ## get current user profile
-GET http://localhost:8000/api/profile/me
+GET http://localhost:8000/api/profiles/me
 Content-Type: application/json
     Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiaXNsYSIsImF2YXRhciI6Ii8vd3d3LmdyYXZhdGFyLmNvbS9hdmF0YXIvZjVkNDgzM2IzMWZiYTRlMTVmNjIwYjI2NmUzNWFlODU_cz0yMDAmcj1wZyZkPW1tIiwiZW1haWwiOiJpc2xhbUBjb2RlcnNlLmNvbSIsImlkIjoiNWQwOGFkNDQ5ZTc4NGEyY2Y4M2YzM2ZkIiwiaWF0IjoxNTYwODQ5NzMyfQ.wbK0ZQr44pRjjkjd29uZSnKHnNFUC6IUMmGiuhuebKc
 
 ###
 
-POST http://localhost:8000/api/profile
+## create or update a profile
+POST http://localhost:8000/api/profiles
 Content-Type: application/x-www-form-urlencoded
     Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiaXNsYSIsImF2YXRhciI6Ii8vd3d3LmdyYXZhdGFyLmNvbS9hdmF0YXIvZjVkNDgzM2IzMWZiYTRlMTVmNjIwYjI2NmUzNWFlODU_cz0yMDAmcj1wZyZkPW1tIiwiZW1haWwiOiJpc2xhbUBjb2RlcnNlLmNvbSIsImlkIjoiNWQwOGFkNDQ5ZTc4NGEyY2Y4M2YzM2ZkIiwiaWF0IjoxNTYwODQ5NzMyfQ.wbK0ZQr44pRjjkjd29uZSnKHnNFUC6IUMmGiuhuebKc
 
@@ -13,6 +14,20 @@ Content-Type: application/x-www-form-urlencoded
     company=Codersea
     &status=Front-end developer
     &website=www.codersea.com
-    &skills=React, Redux, Node, Express
+    &skills=React, Redux, Node
     &location=PortSaid, Egypt
     &bio=front-end engineer
+
+###
+
+GET http://localhost:8000/api/profiles
+Content-Type: application/json
+
+###
+
+## get a user's profile by id
+
+# GET http://localhost:8000/api/profiles/user/5d08ad449e784a2cf83f33fd
+GET http://localhost:8000/api/profiles/user/5
+Content-Type: application/json
+    Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiaXNsYSIsImF2YXRhciI6Ii8vd3d3LmdyYXZhdGFyLmNvbS9hdmF0YXIvZjVkNDgzM2IzMWZiYTRlMTVmNjIwYjI2NmUzNWFlODU_cz0yMDAmcj1wZyZkPW1tIiwiZW1haWwiOiJpc2xhbUBjb2RlcnNlLmNvbSIsImlkIjoiNWQwOGFkNDQ5ZTc4NGEyY2Y4M2YzM2ZkIiwiaWF0IjoxNTYwODQ5NzMyfQ.wbK0ZQr44pRjjkjd29uZSnKHnNFUC6IUMmGiuhuebKc
