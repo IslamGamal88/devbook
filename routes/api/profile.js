@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { loginRequired, ensureCorrectUser } = require("../../middleware/auth");
-const { getCurrentUserProfile, createOrUpdateProfile, getAllProfiles, getUserProfile } = require("../../handlers/profile");
+const { getCurrentUserProfile, createOrUpdateProfile, getAllProfiles, getUserProfile, deleteAccount } = require("../../handlers/profile");
 const { check } = require("express-validator/check");
 
 // @ route   GET /api/profile/me
@@ -35,5 +35,10 @@ router.get("/", getAllProfiles);
 // @ desc    get all profiles
 // @ access  private
 router.get("/user/:user_id", loginRequired, getUserProfile);
+// =====================================================
 
+// @ route   DELETE /api/profile/user/:user_id
+// @ desc    get all profiles
+// @ access  private
+router.delete("/user/:user_id", loginRequired, ensureCorrectUser, deleteAccount);
 module.exports = router;

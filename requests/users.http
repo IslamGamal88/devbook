@@ -1,8 +1,8 @@
 POST http://localhost:8000/api/users
 Content-Type: application/x-www-form-urlencoded
 
-name=isla
+name=test
 &password=123456789
-&email=islam@coderse.com
+&email=test@test.com
 
 

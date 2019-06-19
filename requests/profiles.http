@@ -20,14 +20,21 @@ Content-Type: application/x-www-form-urlencoded
 
 ###
 
+## get all profiles
 GET http://localhost:8000/api/profiles
 Content-Type: application/json
 
 ###
 
 ## get a user's profile by id
-
-# GET http://localhost:8000/api/profiles/user/5d08ad449e784a2cf83f33fd
-GET http://localhost:8000/api/profiles/user/5
+# GET http://localhost:8000/api/profiles/user/5
+GET http://localhost:8000/api/profiles/user/5d08ad449e784a2cf83f33fd
 Content-Type: application/json
     Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiaXNsYSIsImF2YXRhciI6Ii8vd3d3LmdyYXZhdGFyLmNvbS9hdmF0YXIvZjVkNDgzM2IzMWZiYTRlMTVmNjIwYjI2NmUzNWFlODU_cz0yMDAmcj1wZyZkPW1tIiwiZW1haWwiOiJpc2xhbUBjb2RlcnNlLmNvbSIsImlkIjoiNWQwOGFkNDQ5ZTc4NGEyY2Y4M2YzM2ZkIiwiaWF0IjoxNTYwODQ5NzMyfQ.wbK0ZQr44pRjjkjd29uZSnKHnNFUC6IUMmGiuhuebKc
+
+###
+
+## delete a users account
+DELETE http://localhost:8000/api/profiles/user/5d0a6a958b86d502fc2e095a
+Content-Type: application/json
+    Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGVzdCIsImlkIjoiNWQwYTZhOTU4Yjg2ZDUwMmZjMmUwOTVhIiwiZW1haWwiOiJ0ZXN0QHRlc3QuY29tIiwiYXZhdGFyIjoiLy93d3cuZ3JhdmF0YXIuY29tL2F2YXRhci9iNjQyYjQyMTdiMzRiMWU4ZDNiZDkxNWZjNjVjNDQ1Mj9zPTIwMCZyPXBnJmQ9bW0iLCJpYXQiOjE1NjA5NjM3OTF9.nluuMwfJLN7icAd7R-C615xSj8wmpfJbWROhcSZ81uE

@@ -10,5 +10,5 @@ Content-Type: application/json
 POST http://localhost:8000/api/auth
 Content-Type: application/x-www-form-urlencoded
 
-email=islam@coderse.com
+email=test@test.com
 &password=123456789
