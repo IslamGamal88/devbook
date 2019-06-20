@@ -27,6 +27,8 @@ module.exports.ensureCorrectUser = function(req, res, next) {
     const decoded = jwt.verify(token, secretKey);
     if (decoded && decoded.id === req.params.user_id) {
       return next();
+    } else {
+      return res.status(401).json({ msg: "Unauthorized" });
     }
   } catch (error) {
     console.error(error);

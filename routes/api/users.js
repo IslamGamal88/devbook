@@ -13,9 +13,11 @@ const userSignupValidation = [
     .escape(),
   check("email", "Please enter a valid email.")
     .isEmail()
-    .normalizeEmail(),
+    .normalizeEmail()
+    .trim(),
   check("password", "Password must be atleast 8 characters.").isLength({ min: 8 })
 ];
 
 router.post("/", userSignupValidation, signup);
+
 module.exports = router;
