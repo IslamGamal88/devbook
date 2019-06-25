@@ -1,8 +1,9 @@
 // app config
+const port = process.env.PORT || 8000;
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 8000;
 // libs
+const helmet = require("helmet");
 const bodyParser = require("body-parser");
 
 // route imports
@@ -12,6 +13,7 @@ const profileRoutes = require("./routes/api/profile");
 const postsRoutes = require("./routes/api/posts");
 
 // libs config
+app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
